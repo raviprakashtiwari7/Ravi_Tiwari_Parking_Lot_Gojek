@@ -9,12 +9,10 @@ import com.gojek.assignment.model.Vehicle;
 import java.util.PriorityQueue;
 
 public class ParkingLotManager {
-    int numberOfParkingSlots;
     ParkingLot parkingLot;
 
     public ParkingLotManager(int noOfSlots){
-        PriorityQueue<ParkingSlot> slots = new PriorityQueue<>(numberOfParkingSlots, new SlotComparator());
-        parkingLot = new ParkingLot(numberOfParkingSlots, slots);
+        parkingLot = new ParkingLot(noOfSlots);
     }
 
     public void parkVehicle(String registrationNumber, String colour){
@@ -22,7 +20,7 @@ public class ParkingLotManager {
         this.parkingLot.alotParkingToVehicle(vehicle);
     }
 
-    public void freeParking(String slotNumber){
+    public void freeParking(int slotNumber){
         parkingLot.freeParking(slotNumber);
     }
 

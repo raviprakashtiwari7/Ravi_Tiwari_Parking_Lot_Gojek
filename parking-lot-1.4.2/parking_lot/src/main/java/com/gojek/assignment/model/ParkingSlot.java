@@ -2,18 +2,18 @@ package com.gojek.assignment.model;
 
 public class ParkingSlot {
 
-    private String slotNumber;
+    private int slotNumber;
     private Vehicle vehicle;
 
-    public ParkingSlot(String slotNumber) {
+    public ParkingSlot(int slotNumber) {
         this.slotNumber = slotNumber;
     }
 
-    public String getSlotNumber() {
+    public int getSlotNumber() {
         return slotNumber;
     }
 
-    public void setSlotNumber(String slotNumber) {
+    public void setSlotNumber(int slotNumber) {
         this.slotNumber = slotNumber;
     }
 
@@ -21,7 +21,26 @@ public class ParkingSlot {
         return vehicle;
     }
 
+    @Override
+    public int hashCode() {
+        return this.slotNumber;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+
+        if(obj == null || obj.getClass()!= this.getClass())
+            return false;
+
+        ParkingSlot parkingSlot = (ParkingSlot) obj;
+        return this.slotNumber == parkingSlot.slotNumber;
+    }
+
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
+
+
 }

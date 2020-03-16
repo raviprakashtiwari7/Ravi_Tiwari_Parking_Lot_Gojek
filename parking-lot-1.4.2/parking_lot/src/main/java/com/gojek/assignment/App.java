@@ -6,7 +6,7 @@ import com.gojek.assignment.manager.ParkingLotManager;
 import java.io.*;
 
 /**
- * Hello world!
+ * Parking Lot Application
  *
  */
 public class App 
@@ -81,7 +81,7 @@ public class App
             case Command.LEAVE:
                 if (command.length >= 2) {
                     if (parkingLotController != null) {
-                        parkingLotController.freeParking(command[1]);
+                        parkingLotController.freeParking(Integer.valueOf(command[1]));
                         return;
                     }
                 }
