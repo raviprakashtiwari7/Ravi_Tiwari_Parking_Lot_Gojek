@@ -12,7 +12,7 @@ public class ParkingLotManager {
     int numberOfParkingSlots;
     ParkingLot parkingLot;
 
-    public void createParkingSlots(int noOfSlots){
+    public ParkingLotManager(int noOfSlots){
         PriorityQueue<ParkingSlot> slots = new PriorityQueue<>(numberOfParkingSlots, new SlotComparator());
         parkingLot = new ParkingLot(numberOfParkingSlots, slots);
     }

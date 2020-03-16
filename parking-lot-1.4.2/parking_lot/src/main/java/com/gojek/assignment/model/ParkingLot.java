@@ -1,7 +1,6 @@
 package com.gojek.assignment.model;
 
-import com.gojek.assignment.Constants.Command;
-import com.gojek.assignment.manager.Constants;
+import com.gojek.assignment.Constants.Constants;
 
 import java.util.*;
 
@@ -18,6 +17,7 @@ public class ParkingLot {
         for(int slotNumber=1;slotNumber<=noOfSlots;slotNumber++){
             parkingSlots.add(new ParkingSlot(String.valueOf(slotNumber)));
         }
+        System.out.println(String.format(Constants.PARKING_LOT_CREATED, noOfSlots));
     }
 
     public String alotParkingToVehicle(Vehicle vehicle){
