@@ -1,14 +1,19 @@
 package com.gojek.assignment.model;
 
 public class ParkingSlot {
-    private int slotNumber;
+
+    private String slotNumber;
     private Vehicle vehicle;
 
-    public int getSlotNumber() {
+    public ParkingSlot(String slotNumber) {
+        this.slotNumber = slotNumber;
+    }
+
+    public String getSlotNumber() {
         return slotNumber;
     }
 
-    public void setSlotNumber(int slotNumber) {
+    public void setSlotNumber(String slotNumber) {
         this.slotNumber = slotNumber;
     }
 

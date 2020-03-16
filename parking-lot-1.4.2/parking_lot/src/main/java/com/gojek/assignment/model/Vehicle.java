@@ -3,7 +3,15 @@ package com.gojek.assignment.model;
 public class Vehicle {
     private String colour;
     private String registrationNumber;
-    private ParkingTicket parkingTicket;
+
+    public Vehicle(String colour, String registrationNumber) {
+        this.colour = colour;
+        this.registrationNumber = registrationNumber;
+    }
+
+    private ParkingSlot parkingSlot;
+
+
 
     public String getColour() {
         return colour;
@@ -21,11 +29,11 @@ public class Vehicle {
         this.registrationNumber = registrationNumber;
     }
 
-    public ParkingTicket getParkingTicket() {
-        return parkingTicket;
+    public ParkingSlot getParkingSlot() {
+        return parkingSlot;
     }
 
-    public void setParkingTicket(ParkingTicket parkingTicket) {
-        this.parkingTicket = parkingTicket;
+    public void setParkingSlot(ParkingSlot parkingSlot) {
+        this.parkingSlot = parkingSlot;
     }
 }
