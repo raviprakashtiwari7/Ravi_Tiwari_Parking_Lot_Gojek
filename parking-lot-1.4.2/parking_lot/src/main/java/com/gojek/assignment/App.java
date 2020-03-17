@@ -1,6 +1,6 @@
 package com.gojek.assignment;
 
-import com.gojek.assignment.Constants.Command;
+import com.gojek.assignment.constants.Command;
 import com.gojek.assignment.manager.ParkingLotManager;
 
 import java.io.*;

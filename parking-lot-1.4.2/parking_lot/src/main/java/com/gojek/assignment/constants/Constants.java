@@ -1,4 +1,4 @@
-package com.gojek.assignment.Constants;
+package com.gojek.assignment.constants;
 
 public class Constants {
     public static final String NO_SPACE = "Sorry, parking lot is full";

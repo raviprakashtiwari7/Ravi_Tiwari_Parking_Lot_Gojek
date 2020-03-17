@@ -1,6 +1,6 @@
 package com.gojek.assignment.model;
 
-import com.gojek.assignment.Constants.Constants;
+import com.gojek.assignment.constants.Constants;
 import com.gojek.assignment.comparator.SlotComparator;
 
 import java.util.*;
@@ -11,6 +11,21 @@ public class ParkingLot {
     private PriorityQueue<ParkingSlot> parkingSlots;
     private HashMap<Vehicle, ParkingSlot> vehicleMap = new HashMap<>();
 
+    public PriorityQueue<ParkingSlot> getParkingSlots() {
+        return parkingSlots;
+    }
+
+    public void setParkingSlots(PriorityQueue<ParkingSlot> parkingSlots) {
+        this.parkingSlots = parkingSlots;
+    }
+
+    public HashMap<Vehicle, ParkingSlot> getVehicleMap() {
+        return vehicleMap;
+    }
+
+    public void setVehicleMap(HashMap<Vehicle, ParkingSlot> vehicleMap) {
+        this.vehicleMap = vehicleMap;
+    }
 
     public ParkingLot(int noOfSlots) {
         parkingSlots = new PriorityQueue<ParkingSlot>(noOfSlots, new SlotComparator());
@@ -95,20 +110,15 @@ public class ParkingLot {
 
     public String getSlotNumberForRegistrationNumber(String registrationNumber){
         Iterator<Vehicle> itr = vehicleMap.keySet().iterator();
-        boolean found=false;
         while (itr.hasNext()){
             Vehicle vehicle = itr.next();
             if(vehicle.getRegistrationNumber().equals(registrationNumber)){
                 System.out.println(vehicle.getParkingSlot().getSlotNumber());
-                found=true;
-                break;
+                return String.valueOf(vehicle.getParkingSlot().getSlotNumber());
             }
         }
-        if(!found){
             System.out.println(Constants.NOT_PARKED_IN_PARKING_LOT);
             return Constants.NOT_PARKED_IN_PARKING_LOT;
-        }
-        return "";
     }
 
     public String getSlotNumbersForCarsWithColour(String colour){

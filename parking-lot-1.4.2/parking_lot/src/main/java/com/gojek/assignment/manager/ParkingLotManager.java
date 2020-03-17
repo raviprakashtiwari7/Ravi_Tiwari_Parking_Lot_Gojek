@@ -1,12 +1,7 @@
 package com.gojek.assignment.manager;
 
-import com.gojek.assignment.Constants.Command;
-import com.gojek.assignment.comparator.SlotComparator;
 import com.gojek.assignment.model.ParkingLot;
-import com.gojek.assignment.model.ParkingSlot;
 import com.gojek.assignment.model.Vehicle;
-
-import java.util.PriorityQueue;
 
 public class ParkingLotManager {
     ParkingLot parkingLot;
