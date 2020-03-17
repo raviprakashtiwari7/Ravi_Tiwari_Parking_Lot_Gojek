@@ -1,0 +1,5 @@
+#!/bin/bash -ex
+
+mvn clean install
+
+[ $? -ne 0 ] && die "Build failure"
