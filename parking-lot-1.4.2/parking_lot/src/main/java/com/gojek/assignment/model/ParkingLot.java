@@ -36,15 +36,16 @@ public class ParkingLot {
         return String.format(Constants.ALLOCATED_SLOT, slot.getSlotNumber());
     }
 
-    public void getStatus(){
+    public String getStatus(){
         if(vehicleMap.isEmpty()){
             System.out.println(Constants.ALL_PARKING_SLOT_EMPTY);
-            return;
+            return Constants.ALL_PARKING_SLOT_EMPTY;
         }
         System.out.println(String.format(Constants.STATUS_HEADER));
         for(Map.Entry<Vehicle, ParkingSlot> slot : vehicleMap.entrySet()){
             System.out.println(String.format(Constants.STATUS_BODY, slot.getValue().getSlotNumber(), slot.getKey().getRegistrationNumber(), slot.getKey().getColour()));
         }
+        return "";
     }
 
     public String freeParking(int slotNumber){
@@ -73,7 +74,7 @@ public class ParkingLot {
         return String.format(Constants.SLOT_FREED, slotNumber);
     }
 
-    public void getRegistrationNumsForCarsWithColour(String colour){
+    public String getRegistrationNumsForCarsWithColour(String colour){
         Iterator<Vehicle> itr = vehicleMap.keySet().iterator();
         String data = "";
         while (itr.hasNext()){
@@ -84,13 +85,15 @@ public class ParkingLot {
         }
         if(data.equals("")){
             System.out.println(Constants.NOT_PARKED_IN_PARKING_LOT);
+            return Constants.NOT_PARKED_IN_PARKING_LOT;
         }
         else{
             System.out.println(data.substring(0, data.length()-1));
+            return data.substring(0, data.length()-1);
         }
     }
 
-    public void getSlotNumberForRegistrationNumber(String registrationNumber){
+    public String getSlotNumberForRegistrationNumber(String registrationNumber){
         Iterator<Vehicle> itr = vehicleMap.keySet().iterator();
         boolean found=false;
         while (itr.hasNext()){
@@ -103,10 +106,12 @@ public class ParkingLot {
         }
         if(!found){
             System.out.println(Constants.NOT_PARKED_IN_PARKING_LOT);
+            return Constants.NOT_PARKED_IN_PARKING_LOT;
         }
+        return "";
     }
 
-    public void getSlotNumbersForCarsWithColour(String colour){
+    public String getSlotNumbersForCarsWithColour(String colour){
         Iterator<Vehicle> itr = vehicleMap.keySet().iterator();
         String data = "";
         while (itr.hasNext()){
@@ -117,9 +122,11 @@ public class ParkingLot {
         }
         if(data.equals("")){
             System.out.println(Constants.COLOR_CAR_NOT_PARKED_IN_PARKING_LOT);
+            return Constants.COLOR_CAR_NOT_PARKED_IN_PARKING_LOT;
         }
         else{
             System.out.println(data.substring(0, data.length()-1));
+            return data.substring(0, data.length()-1);
         }
     }
 
